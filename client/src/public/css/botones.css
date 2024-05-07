@@ -1,0 +1,49 @@
+.boton_redondo {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .boton_redondo:hover {
+    background-color: #45a049;
+  }
+  
+  .boton_gradiente {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #FFD54F, #FFB300);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .boton_gradiente:hover {
+    background-image: linear-gradient(to right, #FFB300, #FF8F00);
+  }
+  
+  .boton_resaltado {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #3498db;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .boton_resaltado:hover {
+    background-color: #3498db;
+    color: white;
+  }
+  

@@ -1,0 +1,70 @@
+/* Estilo base para el input */
+.input-text {
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 40px;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Estilo cuando el input tiene el foco */
+  .input-text:focus {
+    border-color: #3498db;
+    outline: none; /* Eliminar el contorno predeterminado */
+  }
+  
+  /* Estilo cuando el input está deshabilitado */
+  .input-text:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+  }
+  
+  /* Estilo cuando el input tiene un valor inválido (por ejemplo, en un formulario) */
+  .input-text:invalid {
+    border-color: #e74c3c;
+  }
+  
+  /* Estilo para placeholder (texto de marcador de posición) */
+  .input-text::placeholder {
+    color: #999;
+  }
+  
+  /* Estilo para el texto cuando se introduce un valor */
+  .input-text:not(:placeholder-shown) {
+    border-color: #2ecc71; /* Cambia el color del borde cuando se introduce texto */
+  }
+  
+  /* Estilos para el input de correo electrónico */
+.input-email {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-email:focus {
+    border-color: #007bff;
+  }
+  
+  /* Estilos para el input de contraseña */
+  .input-password {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-password:focus {
+    border-color: #007bff;
+  }
+  
