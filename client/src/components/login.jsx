@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../public/css/login.css'; // Importa el archivo CSS
+import { BotonResaltado } from './boton';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -46,7 +47,10 @@ const LoginForm = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit">Iniciar sesión</button>
+          <div style={{textAlign: 'center'}}>
+            <BotonResaltado tipo="submit" text="Iniciar Sesión" />
+          </div>
+          
         </form>
       </div>
     </div>
