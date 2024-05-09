@@ -1,9 +1,9 @@
 /* Estilo base para el input */
 .input-text {
-    padding: 20px;
+    padding: 2px;
     border: 2px solid #ccc;
     border-radius: 5px;
-    font-size: 40px;
+    font-size: 16px;
     transition: border-color 0.3s ease;
   }
   

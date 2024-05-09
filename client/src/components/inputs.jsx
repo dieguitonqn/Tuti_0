@@ -6,13 +6,14 @@ export default function InputText(){
     );
 }
 
-export function InputEmail(email){
+export function InputEmail(){
     return (
         <input 
             className='input-email'
             type="email"
             placeholder="Correo electrónico"
-            value={email}>
+            // value={email}
+            >
         </input>
     )
 }

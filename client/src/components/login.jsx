@@ -1,50 +1,56 @@
 import React, { useState } from 'react';
-import '../public/css/inputs.css'
-import '../public/css/botones.css'
-import { InputEmail } from './inputs';
+import axios from 'axios';
+import '../public/css/login.css'; // Importa el archivo CSS
 
-const LoginPage = () => {
-  const [email, setEmail] = useState('');
+const LoginForm = () => {
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleLogin = () => {
-    // Aquí puedes agregar la lógica para autenticar al usuario
-    // por ejemplo, podrías enviar una solicitud a un servidor backend
-    // y verificar las credenciales del usuario
-    // Simplemente para este ejemplo, cambiaré loggedIn a true cuando se presione el botón de inicio de sesión
-    setLoggedIn(true);
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    
+    try {
+      const response = await axios.post('/login', { username, password });
+      console.log(response.data); // Manejar la respuesta según sea necesario
+    } catch (error) {
+      setError('Usuario o contraseña incorrectos'); // O cualquier otro mensaje de error
+      console.error('Error al iniciar sesión:', error);
+    }
   };
 
   return (
-    <div>
-      {loggedIn ? (
-        <div>
-          <h2>Bienvenido de vuelta!</h2>
-          {/* Aquí iría el contenido para usuarios autenticados */}
-        </div>
-      ) : (
-        <div>
-          <h2>Iniciar sesión</h2>
-          <InputEmail
-            // className='input-email'
-            // type="email"
-            // placeholder="Correo electrónico"
-            // value={email}
-            // onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            className='input-password'
-            type="password"
-            placeholder="Contraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button className='boton_resaltado' onClick={handleLogin}>Iniciar sesión</button>
-        </div>
-      )}
+    <div className="login"> {/* Aplica la clase 'login' */}
+      <div className="login-container"> {/* Agrega un contenedor con la clase 'login-container' */}
+        <h2 className="login-header">Iniciar sesión</h2>
+        {error && <p className="error-message">{error}</p>}
+        <form onSubmit={handleLogin}>
+          
+          <div>
+            <label htmlFor="username">Usuario</label>
+            <br />
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Contraseña</label>
+            <br />
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit">Iniciar sesión</button>
+        </form>
+      </div>
     </div>
   );
 };
 
-export default LoginPage;
+export default LoginForm;
