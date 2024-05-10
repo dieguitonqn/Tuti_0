@@ -1,6 +1,10 @@
 // import logo from './logo.svg';
 import './public/css/App.css';
-import LoginForm from './components/login.jsx';
+// import LoginForm from './components/login.jsx';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import LoginForm from './pages/login';
+
+
 
 function App() {
    return (
@@ -21,10 +25,15 @@ function App() {
 //       </header>
 //     </div>
 //   );
-
-    <>  
-        <LoginForm />
-    </>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={< LoginForm />} />
+            <Route path="/landing" element={<h1> BienvenidEs!</h1>} />
+        </Routes>
+    </BrowserRouter> 
+    // <>  
+    //     <LoginForm />
+    // </>
     );
     
 }

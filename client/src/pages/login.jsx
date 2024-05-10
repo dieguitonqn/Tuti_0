@@ -1,22 +1,28 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../public/css/login.css'; // Importa el archivo CSS
-import { BotonResaltado } from './boton';
+import { BotonResaltado } from '../components/boton.jsx';
+import {useNavigate} from 'react-router-dom'
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Utilize useNavigate hook for navigation
 
-  const handleLogin = async (e) => {
+  const  handleLogin = async (e) => {
     e.preventDefault();
+    
+    
     
     try {
       const response = await axios.post('/login', { username, password });
       console.log(response.data); // Manejar la respuesta según sea necesario
+      navigate("/landing");
     } catch (error) {
       setError('Usuario o contraseña incorrectos'); // O cualquier otro mensaje de error
       console.error('Error al iniciar sesión:', error);
+      
     }
   };
 
